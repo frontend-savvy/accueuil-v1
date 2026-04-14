@@ -8,10 +8,11 @@ export default function About() {
         {/* Text Content */}
         <div className="w-full md:w-[55%] flex flex-col items-start text-left">
           <div className="flex items-center gap-4 mb-8">
-            <h2 className="text-3xl md:text-5xl font-serif font-medium text-brand-dark tracking-tight">
-              Le cabinet Exaucé
+            <h2 className="text-3xl md:text-5xl font-serif font-medium text-brand-dark tracking-tight flex items-center gap-3">
+              Le cabinet Exonéo
+              <img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Flag_of_France.svg" alt="France" className="w-8 h-6 object-cover rounded-sm shadow-sm ml-2" />
+              <img src="https://upload.wikimedia.org/wikipedia/commons/d/da/Flag_of_Luxembourg.svg" alt="Luxembourg" className="w-8 h-6 object-cover rounded-sm shadow-sm" />
             </h2>
-            <span className="text-3xl drop-shadow-sm" title="Fribourg, Suisse">🇨🇭</span>
           </div>
           
           <p className="text-gray-600 mb-6 leading-relaxed font-light text-[17px]">
