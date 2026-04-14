@@ -1,6 +1,7 @@
 import Hero from "@/components/sections/Hero";
 import LogoCloud from "@/components/sections/LogoCloud";
 import Targets from "@/components/sections/Targets";
+import Callout from "@/components/sections/Callout";
 import Testimonials from "@/components/sections/Testimonials";
 import Questions from "@/components/sections/Questions";
 import Profile from "@/components/sections/Profile";
@@ -15,6 +16,7 @@ export default function Home() {
       <Hero />
       <LogoCloud />
       <Targets />
+      <Callout />
       <Testimonials />
       <Questions />
       <Profile />

@@ -1,73 +1,54 @@
-import { Card, CardContent } from "@/components/ui/card";
-import { BuildingIcon, LineChart } from "lucide-react";
 import Image from "next/image";
 
 export default function Profile() {
   return (
-    <section className="bg-white w-full py-24 overflow-hidden relative">
-      <div className="max-w-7xl mx-auto px-6 md:px-12 flex flex-col items-center">
-        <h2 className="text-3xl md:text-5xl font-extrabold text-brand-dark mb-16 text-center tracking-tight">
-          Une expertise pointue et à la pointe
+    <section className="bg-[#fbfcff] w-full py-32 overflow-hidden relative">
+      <div className="max-w-7xl mx-auto px-6 md:px-12">
+        <h2 className="text-3xl md:text-5xl font-serif font-medium text-brand-dark mb-24 text-center tracking-tight">
+          Une expertise qui donne le la
         </h2>
 
-        <div className="flex flex-col md:flex-row gap-8 w-full items-center justify-between relative">
+        <div className="flex flex-col lg:flex-row items-center justify-between gap-16">
           
-          {/* Decorative left shape background */}
-          <div className="hidden lg:block absolute -left-32 top-0 w-96 h-96 bg-brand-light rounded-[4rem] -z-10 transform -rotate-6"></div>
+          {/* Left Side: Stats / Cards */}
+          <div className="flex flex-col sm:flex-row gap-8 lg:w-[55%] w-full">
+            {/* Box 1 */}
+            <div className="bg-white p-10 rounded-[2rem] flex flex-col items-center text-center shadow-[0_15px_50px_rgba(0,0,0,0.04)] h-full w-full group hover:-translate-y-2 transition-transform duration-500">
+              <div className="w-16 h-16 bg-brand-green/10 text-brand-green font-bold text-2xl rounded-2xl flex items-center justify-center mb-8 shrink-0 group-hover:scale-110 group-hover:bg-brand-green group-hover:text-white shadow-inner transition-all duration-300">
+                10
+              </div>
+              <h3 className="font-bold text-xl text-brand-dark mb-4">10 années</h3>
+              <p className="text-gray-500 text-[15px] font-light leading-relaxed">
+                D'expertise de comptabilité d'entreprise, de fiscalité et de conseils de premier plan pour des indépendants en Fribourg.
+              </p>
+            </div>
 
-          {/* Cards Column */}
-          <div className="w-full md:w-1/2 flex flex-col gap-6">
-            <Card className="border-0 shadow-lg shadow-black/5 bg-white rounded-2xl hover:shadow-xl transition-shadow flex overflow-hidden">
-              <div className="w-2 bg-brand-green shrink-0"></div>
-              <CardContent className="p-8 flex items-start gap-6 w-full">
-                <div className="bg-brand-green/20 p-4 rounded-xl shrink-0">
-                  <BuildingIcon className="text-brand-green w-8 h-8" />
-                </div>
-                <div>
-                  <h3 className="text-xl font-bold text-brand-dark mb-2">Immobilier</h3>
-                  <p className="text-gray-500 text-sm leading-relaxed">
-                    L'immobilier reste une valeur refuge, mais son acquisition, sa détention ou sa transmission peut rapidement générer des frottements fiscaux. Nous optimisons chaque étape pour vous.
-                  </p>
-                </div>
-              </CardContent>
-            </Card>
-
-            <Card className="border-0 shadow-lg shadow-black/5 bg-white rounded-2xl hover:shadow-xl transition-shadow flex overflow-hidden">
-              <div className="w-2 bg-brand-pink shrink-0"></div>
-              <CardContent className="p-8 flex items-start gap-6 w-full">
-                <div className="bg-brand-pink/20 p-4 rounded-xl shrink-0">
-                  <LineChart className="text-brand-pink w-8 h-8" />
-                </div>
-                <div>
-                  <h3 className="text-xl font-bold text-brand-dark mb-2">Bourse et crypto-monnaies</h3>
-                  <p className="text-gray-500 text-sm leading-relaxed">
-                    Une fiscalité complexe qui demande une analyse rigoureuse. Nous vous aidons à structurer vos plus-values dans un cadre juridique sécurisé et optimisé.
-                  </p>
-                </div>
-              </CardContent>
-            </Card>
+            {/* Box 2 */}
+            <div className="bg-white p-10 rounded-[2rem] flex flex-col items-center text-center shadow-[0_15px_50px_rgba(0,0,0,0.04)] h-full w-full group hover:-translate-y-2 transition-transform duration-500">
+              <div className="w-16 h-16 bg-brand-pink/10 text-brand-pink font-bold text-2xl rounded-2xl flex items-center justify-center mb-8 shrink-0 group-hover:scale-110 group-hover:bg-brand-pink group-hover:text-white shadow-inner transition-all duration-300">
+                <svg className="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5V4H2v16h5m10 0v-5H7v5m10 0a2 2 0 002-2v-3H5v3a2 2 0 002 2" />
+                </svg>
+              </div>
+              <h3 className="font-bold text-xl text-brand-dark mb-4">Réseau de partenaires</h3>
+              <p className="text-gray-500 text-[15px] font-light leading-relaxed">
+                Des milliers d'heures à conseiller mes clients à tous les niveaux de leur vie.
+              </p>
+            </div>
           </div>
 
-          {/* Image & Decorative Right */}
-          <div className="w-full md:w-1/2 relative flex justify-end mt-12 md:mt-0 xl:-mr-12">
-            <div className="absolute right-0 top-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-brand-cyan/20 rounded-[10rem] -z-10 rounded-tr-none rounded-br-none"></div>
-            
-            {/* Placeholder for the portrait */}
-            <div className="relative w-full max-w-sm aspect-[3/4] bg-gray-200 rounded-3xl overflow-hidden shadow-2xl">
-              {/* Fallback image if generative src not available */}
-              <div className="absolute inset-0 bg-brand-dark flex flex-col items-center justify-center text-white/50 text-center p-8">
-                <div className="w-24 h-24 bg-white/10 rounded-full mb-4 flex items-center justify-center">
-                  <span className="text-4xl text-white/40">📸</span>
-                </div>
-                <p>Portrait professionnel</p>
-              </div>
+          {/* Right Side: Image Placeholder */}
+          <div className="lg:w-[45%] w-full max-w-md relative flex justify-center lg:justify-end mt-12 lg:mt-0">
+            <div className="absolute inset-0 bg-brand-cyan/20 rounded-[4rem] transform scale-110 -rotate-6 transition-transform duration-700 hover:rotate-[-2deg]" style={{ borderRadius: '40% 60% 70% 30% / 40% 50% 60% 50%' }} />
+            <div className="relative z-10 w-full aspect-[4/5] rounded-[3rem] overflow-hidden shadow-2xl bg-white border-4 border-white">
               <img 
-                src="https://images.unsplash.com/photo-1556157382-97eda2d62296?auto=format&fit=crop&w=800&q=80" 
-                alt="Portrait Consultant"
-                className="w-full h-full object-cover relative z-10"
+                src="https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=800&auto=format&fit=crop" 
+                alt="Expertise Profile" 
+                className="w-full h-full object-cover"
               />
             </div>
           </div>
+
         </div>
       </div>
     </section>
