@@ -4,9 +4,9 @@ export default function LogoCloud() {
       
       {/* Divider / Trust Text */}
       <div className="flex items-center justify-center w-full max-w-7xl px-6 mb-8 mt-2">
-        <div className="h-px bg-black  flex-1"></div>
-        <span className="px-12 text-[15px] font-bold text-gray-700">plus de 300 Chefs d'entreprise nous ont fait confiance</span>
-        <div className="h-px bg-black flex-1"></div>
+        <div className="h-px   bg-black  flex-1"></div>
+        <span className="text-center px-4 md:px-12 text-[14px] sm:text-[15px] font-bold text-gray-700">plus de 300 Chefs d'entreprise nous ont fait confiance</span>
+        <div className="h-px   bg-black flex-1"></div>
       </div>
 
       {/* Infinite Marquee */}

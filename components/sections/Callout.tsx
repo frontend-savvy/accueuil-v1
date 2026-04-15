@@ -4,7 +4,7 @@ export default function Callout() {
       <div className="max-w-5xl mx-auto flex items-center gap-10 md:gap-16">
 
         {/* Left horizontal rule */}
-        <div className="hidden md:block h-px bg-white/30 flex-1" />
+        <div className="hidden sm:block h-[1.3px] bg-white/60 flex-1" />
 
         {/* Center Text */}
         <div className=" lg:max-w-md text-center">
@@ -14,7 +14,7 @@ export default function Callout() {
         </div>
 
         {/* Right horizontal rule */}
-        <div className="hidden md:block h-px bg-white/30 flex-1" />
+        <div className="hidden sm:block h-[1.3px] bg-white/60 flex-1" />
 
       </div>
     </section>
