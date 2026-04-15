@@ -38,7 +38,7 @@ export default function Testimonials() {
       <div className="max-w-3xl mx-auto flex flex-col items-center">
 
         {/* Top Row: Stars left, Badge right */}
-        <div className="w-full flex items-center justify-between mb-10">
+        <div className="w-full flex items-center flex-col sm:flex-row gap-4 justify-between mb-10">
           {/* Pink Stars */}
           <div className="flex gap-1">
             {[...Array(5)].map((_, i) => (

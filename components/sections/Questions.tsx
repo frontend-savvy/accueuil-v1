@@ -43,7 +43,7 @@ export default function Questions() {
         </p>
 
         {/* Three columns */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 w-full mb-14">
+        <div className="grid grid-cols-1  md:grid-cols-2 lg:grid-cols-3 gap-10 w-full mb-14">
           {groups.map((group, gIdx) => (
             <div key={gIdx} className="flex flex-col">
               {/* Column title with border line BELOW */}
@@ -54,7 +54,7 @@ export default function Questions() {
               </div>
 
               {/* Questions with left blue border */}
-              <div className="flex flex-col gap-4">
+              <div className="flex  flex-col gap-4">
                 {group.questions.map((q, qIdx) => (
                   <div
                     key={qIdx}

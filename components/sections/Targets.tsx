@@ -55,7 +55,7 @@ export default function Targets() {
         </p>
 
         {/* Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full">
+        <div className="grid grid-cols-1  md:grid-cols-2 lg:grid-cols-3 gap-6 w-full">
           {targets.map((target, idx) => (
             <div key={idx} className="bg-white rounded-xl p-8 border border-gray-100 shadow-[0_4px_20px_rgba(0,0,0,0.02)] flex flex-col h-full">
               

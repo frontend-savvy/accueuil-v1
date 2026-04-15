@@ -7,7 +7,7 @@ export default function Callout() {
         <div className="hidden md:block h-px bg-white/30 flex-1" />
 
         {/* Center Text */}
-        <div className="flex-shrink-0 max-w-md text-center">
+        <div className=" lg:max-w-md text-center">
           <p className="text-white text-[17px] font-sans font-medium leading-[1.75] tracking-wide">
             En moyenne, nos clients découvrent qu'ils ont payé bien plus que nécessaire : mauvais choix de statut, exonérations ignorées, options fiscales oubliées... Combien d'années d'exonération laissez-vous passer ?
           </p>
