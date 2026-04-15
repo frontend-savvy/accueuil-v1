@@ -1,5 +1,5 @@
+import { Compass, Euro } from "lucide-react";
 import Image from "next/image";
-import { Copyright, Settings } from "lucide-react";
 
 export default function Profile() {
   return (
@@ -21,7 +21,7 @@ export default function Profile() {
             <div className="flex flex-col items-center text-center px-4">
               {/* Green icon with black icon inside */}
               <div className="w-12 h-12 bg-brand-green rounded-xl flex items-center justify-center mb-6 shrink-0">
-                <Copyright className="text-black w-5 h-5" strokeWidth={2.5} />
+                <Euro className="text-black w-5 h-5" strokeWidth={2.5} />
               </div>
               <h3 className="text-[17px] font-bold text-[#030423] mb-4">
                 Honoraires
@@ -35,7 +35,7 @@ export default function Profile() {
             <div className="flex flex-col items-center text-center px-4">
               {/* Pink icon with black icon inside */}
               <div className="w-12 h-12 bg-brand-pink rounded-xl flex items-center justify-center mb-6 shrink-0">
-                <Settings className="text-black w-5 h-5" strokeWidth={2.5} />
+                <Compass className="text-black w-5 h-5" strokeWidth={2.5} />
               </div>
               <h3 className="text-[17px] font-bold text-[#030423] mb-4">
                 Stratégie sur mesure
