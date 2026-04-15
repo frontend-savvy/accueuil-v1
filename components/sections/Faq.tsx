@@ -1,52 +1,84 @@
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
+"use client";
+
+import { ChevronDown } from "lucide-react";
+import { useState } from "react";
+
+const faqs = [
+  {
+    question: "Comment se déroule la consultation avec l'avocat ?",
+    answer:
+      "La consultation se déroule en visioconférence ou par téléphone. Nous analysons ensemble votre situation fiscale et sociale pour vous proposer les meilleures optimisations.",
+  },
+  {
+    question: "Comment se déroule l'appel découverte ?",
+    answer:
+      "L'appel découverte est un échange gratuit de 15 minutes pour vérifier que nous sommes le bon interlocuteur pour votre situation. Il n'y a aucun engagement.",
+  },
+  {
+    question: "La consultation est-elle payante ?",
+    answer:
+      "L'appel découverte est totalement gratuit. La consultation approfondie fait partie de notre accompagnement forfaitaire, défini dès le départ.",
+  },
+  {
+    question: "Je travaille déjà avec un expert-comptable, est-ce compatible ?",
+    answer:
+      "Tout à fait. Nous travaillons en complémentarité avec les experts-comptables. Notre rôle est d'apporter une expertise fiscale et stratégique que l'expert-comptable n'a pas toujours le temps d'approfondir.",
+  },
+];
 
 export default function Faq() {
-  const faqs = [
-    {
-      question: "Combien coûte un bilan patrimonial ?",
-      answer: "Le coût varie en fonction de la complexité de votre situation patrimoniale. Nous proposons un premier rendez-vous de diagnostic gratuit pour définir avec vous un devis sur mesure, sans engagement.",
-    },
-    {
-      question: "Quelles sont vos expertises ?",
-      answer: "Nous sommes experts en optimisation fiscale, structuration de revenus (TPE/PME, indépendants, professions libérales), conseil en investissement immobilier et gestion de crypto-actifs.",
-    },
-    {
-      question: "Comment se déroule la mission ?",
-      answer: "La mission s'articule généralement en 3 phases : 1. Rendez-vous de diagnostic et recueil d'informations. 2. Analyse et présentation de nos préconisations. 3. Accompagnement à la mise en place et suivi annuel.",
-    },
-    {
-      question: "Les devis et premier rdv sont-ils payants ?",
-      answer: "Non, le premier rendez-vous de prise de contact et le devis qui en découle sont totalement gratuits et sans engagement de votre part.",
-    },
-  ];
+  const [openIdx, setOpenIdx] = useState<number | null>(null);
 
   return (
-    <section className="bg-white w-full pb-24">
-      <div className="max-w-3xl mx-auto px-6 md:px-12 flex flex-col items-center">
-        <h2 className="text-3xl font-extrabold text-brand-dark mb-4 text-center tracking-tight">
+    <section className="bg-white w-full py-24 px-6 md:px-12">
+      <div className="max-w-3xl mx-auto flex flex-col items-center">
+
+        {/* Heading */}
+        <h2 className="text-4xl md:text-[42px] font-serif font-bold text-[#030423] mb-4 text-center tracking-tight leading-tight">
           Questions fréquentes
         </h2>
-        <p className="text-gray-500 text-center mb-12">
-          Retrouvez les réponses aux questions qui nous sont le plus souvent posées.
+
+        {/* Blue subtitle */}
+        <p className="text-[#4141F4] text-[15px] font-medium text-center mb-14 leading-relaxed">
+          Les réponses aux questions que vous vous posez avant de prendre rendez-vous.
         </p>
 
-        <Accordion type="single" collapsible className="w-full">
-          {faqs.map((faq, idx) => (
-            <AccordionItem key={idx} value={`item-${idx}`} className="border-gray-200">
-              <AccordionTrigger className="text-left text-brand-dark font-semibold text-lg hover:text-brand-blue py-6">
-                {faq.question}
-              </AccordionTrigger>
-              <AccordionContent className="text-gray-600 text-base leading-relaxed pb-6">
-                {faq.answer}
-              </AccordionContent>
-            </AccordionItem>
-          ))}
-        </Accordion>
+        {/* Accordion list */}
+        <div className="w-full">
+          {faqs.map((faq, idx) => {
+            const isOpen = openIdx === idx;
+            return (
+              <div key={idx} className="border-b-2 border-[#4141F4]/70">
+                <button
+                  onClick={() => setOpenIdx(isOpen ? null : idx)}
+                  className="w-full flex items-center justify-between py-5 text-left group"
+                >
+                  <span className="text-[14.5px] text-[#030423] font-normal leading-snug pr-8">
+                    {faq.question}
+                  </span>
+                  <ChevronDown
+                    className={`shrink-0 w-4 h-4 text-[#4141F4] transition-transform duration-300 ${
+                      isOpen ? "rotate-180" : ""
+                    }`}
+                    strokeWidth={2}
+                  />
+                </button>
+
+                {/* Answer panel */}
+                <div
+                  className={`overflow-hidden transition-all duration-300 ease-in-out ${
+                    isOpen ? "max-h-48 pb-5" : "max-h-0"
+                  }`}
+                >
+                  <p className="text-[13.5px] text-gray-400 leading-relaxed">
+                    {faq.answer}
+                  </p>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+
       </div>
     </section>
   );

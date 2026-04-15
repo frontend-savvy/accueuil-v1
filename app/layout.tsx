@@ -1,7 +1,7 @@
 import Footer from "@/components/layout/Footer";
 import Navbar from "@/components/layout/Navbar";
 import type { Metadata } from "next";
-import { Inter, Playfair_Display } from "next/font/google";
+import { Archivo_Black, Inter, Lora } from "next/font/google";
 import "./globals.css";
 
 const inter = Inter({
@@ -9,9 +9,16 @@ const inter = Inter({
   subsets: ["latin"],
 });
 
-const playfair = Playfair_Display({
+const lora = Lora({
   variable: "--font-serif",
   subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+});
+
+const archivoBlack = Archivo_Black({
+  variable: "--font-display",
+  subsets: ["latin"],
+  weight: "400",
 });
 
 export const metadata: Metadata = {
@@ -25,7 +32,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="fr" className={`${inter.variable} ${playfair.variable} h-full antialiased`} suppressHydrationWarning>
+    <html lang="fr" className={`${inter.variable} ${lora.variable} ${archivoBlack.variable} h-full antialiased`} suppressHydrationWarning>
       <body className="min-h-full flex flex-col font-sans">
         <Navbar />
         {children}

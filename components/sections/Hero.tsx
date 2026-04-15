@@ -2,44 +2,141 @@ import { Button } from "@/components/ui/button";
 
 export default function Hero() {
   return (
-    <section className="relative w-full max-w-7xl mx-auto px-6 md:px-12 py-24 md:py-32 flex flex-col items-center justify-center text-center overflow-hidden">
-      {/* Decorative Geometric Shapes */}
-      <div className="absolute top-10 left-10 md:top-20 md:left-32 w-16 h-16 md:w-24 md:h-24 bg-brand-pink rounded-3xl rotate-45 opacity-60 animate-[spin_15s_linear_infinite] shadow-lg shadow-brand-pink/20" style={{ clipPath: "polygon(33% 0, 66% 0, 66% 33%, 100% 33%, 100% 66%, 66% 66%, 66% 100%, 33% 100%, 33% 66%, 0 66%, 0 33%, 33% 33%)" }}></div>
-      
-      <div className="absolute top-1/3 -left-4 md:left-12 w-12 h-16 md:w-16 md:h-24 bg-brand-green rounded-[2rem] opacity-70 animate-[bounce_6s_infinite] shadow-xl shadow-brand-green/20" style={{ animationTimingFunction: "cubic-bezier(0.4, 0, 0.2, 1)" }}></div>
+    <section className="relative w-full overflow-hidden bg-[#F4FAFF] pt-24 pb-0 flex flex-col items-center">
+      {/* Inline styles for custom animations */}
+      <style dangerouslySetInnerHTML={{__html: `
+        @keyframes float-1 {
+          0%, 100% { transform: translateY(0) rotate(10deg); }
+          50% { transform: translateY(-20px) rotate(15deg); }
+        }
+        @keyframes float-2 {
+          0%, 100% { transform: translateY(0); }
+          50% { transform: translateY(-30px); }
+        }
+        @keyframes marquee {
+          0% { transform: translateX(0); }
+          100% { transform: translateX(-50%); }
+        }
+      `}} />
 
-      <div className="absolute top-12 right-12 md:top-24 md:right-48 w-16 h-16 md:w-20 md:h-20 bg-brand-dark rounded-full opacity-90 animate-[pulse_8s_infinite] hover:scale-110 transition-transform duration-700 shadow-2xl shadow-brand-dark/30"></div>
+      {/* Decorative Geometric Shapes Layer */}
+      <div className="absolute inset-0 w-full h-full max-w-[1400px] mx-auto pointer-events-none">
+        
+        {/* Top Left: Pink Cross */}
+<div
+  className="absolute top-[8%] left-[5%] md:top-[10%] md:left-[15%] w-36 h-36 text-brand-pink"
+  style={{ animation: "float-1 8s ease-in-out infinite" }}
+>
+  <svg
+    width="100%"
+    height="100%"
+    viewBox="0 0 100 100"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <g fill="currentColor">
+      <rect
+        x="16"
+        y="36"
+        width="68"
+        height="28"
+        rx="14"
+        transform="rotate(45 50 50)"
+      />
+      <rect
+        x="16"
+        y="36"
+        width="68"
+        height="28"
+        rx="14"
+        transform="rotate(-45 50 50)"
+      />
+    </g>
+  </svg>
+</div>
 
-      <div className="absolute bottom-16 left-24 md:bottom-32 md:left-48 w-16 h-16 md:w-24 md:h-24 bg-brand-cyan rounded-[2.5rem] opacity-60 shadow-lg shadow-brand-cyan/20 animate-[pulse_6s_infinite]" style={{ clipPath: "polygon(0% 15%, 15% 15%, 15% 0%, 85% 0%, 85% 15%, 100% 15%, 100% 85%, 85% 85%, 85% 100%, 15% 100%, 15% 85%, 0% 85%)" }}></div>
-
-      <div className="absolute bottom-12 right-32 md:bottom-24 md:right-64 w-16 h-16 md:w-20 md:h-20 bg-brand-yellow flex gap-1 justify-center items-center rounded-2xl opacity-80 animate-[bounce_7s_infinite] shadow-xl shadow-brand-yellow/30" style={{ animationTimingFunction: "ease-in-out" }}>
-        <div className="w-2 h-full bg-white/30 rounded-full" />
-        <div className="w-2 h-full bg-white/30 rounded-full" />
-        <div className="w-2 h-full bg-white/30 rounded-full" />
-      </div>
-
-      <div className="absolute bottom-1/3 -right-8 md:right-16 w-12 h-12 md:w-16 md:h-16 bg-brand-blue rounded-full opacity-80 shadow-lg shadow-brand-blue/30 hover:scale-110 transition-transform duration-700"></div>
-
-      {/* Content */}
-      <div className="relative z-10 group">
-        <div className="absolute -inset-1 bg-gradient-to-r from-brand-yellow/50 to-brand-green/30 rounded-full blur-md opacity-30 group-hover:opacity-60 transition duration-1000 group-hover:duration-200" />
-        <div className="relative bg-[#FCFDF2] px-5 py-2 rounded-full text-sm font-semibold mb-10 border border-[#E9EBB1] text-brand-dark shadow-md shadow-[#E9EBB1]/40 flex items-center justify-center">
-          30K€/moyenne exonérés par client
+        {/* Middle Left: Green Ribbed Horizontal */}
+        <div className="absolute top-[35%] -left-4 md:top-[30%] md:-left-2 flex flex-col -space-y-4" style={{ animation: 'float-2 7s ease-in-out infinite' }}>
+          <div className="w-24 h-12 bg-brand-green rounded-[2rem]"></div>
+          <div className="w-24 h-12 bg-brand-green rounded-[2rem]"></div>
+          <div className="w-24 h-12 bg-brand-green rounded-[2rem]"></div>
         </div>
-      </div>
-      
-      <h1 className="text-4xl md:text-6xl lg:text-7xl font-serif text-brand-dark max-w-5xl tracking-tight leading-[1.1] mb-8 font-medium">
-        Réduisons ensemble <br className="hidden md:block"/> votre charge fiscale
-      </h1>
-      
-      <p className="text-lg md:text-xl text-gray-600 max-w-2xl mb-12 font-light leading-relaxed">
-        La première démarche se résume à réaliser un diagnostic complet et
-        global de votre situation personnelle et professionnelle afin de...
-      </p>
 
-      <Button className="bg-brand-blue hover:bg-blue-700 text-white text-lg rounded-xl flex items-center gap-2 px-8 py-7 shadow-[0_8px_30px_rgb(58,67,255,0.3)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_15px_40px_rgb(58,67,255,0.4)] active:scale-95">
-        Prendre rendez-vous
-      </Button>
+        {/* Bottom Left: Light Blue Vertical Ribbed */}
+        <div className="absolute top-[75%] left-[8%] md:top-[70%] md:left-[14%] flex -space-x-4" style={{ animation: 'float-1 9s ease-in-out infinite reverse' }}>
+          <div className="w-12 h-24 bg-[#C0E0F0] rounded-[2rem]"></div>
+          <div className="w-12 h-24 bg-[#C0E0F0] rounded-[2rem]"></div>
+        </div>
+
+        {/* Top Right: Dark Navy Circle */}
+        <div className="absolute top-[8%] right-[8%] md:top-[12%] md:right-[14%] w-28 h-28 bg-brand-dark rounded-full" style={{ animation: 'float-2 8s ease-in-out infinite 1s' }}></div>
+
+        {/* Bottom Mid Right: Yellow Ribbed Horizontal */}
+        {/* <div className="absolute top-[82%] right-[15%] md:top-[80%] md:right-[24%] flex flex-col -space-y-3" style={{ animation: 'float-1 10s ease-in-out infinite' }}>
+          <div className="w-[88px] h-10 bg-brand-yellow rounded-[2rem]"></div>
+          <div className="w-[88px] h-10 bg-brand-yellow rounded-[2rem]"></div>
+          <div className="w-[88px] h-10 bg-brand-yellow rounded-[2rem]"></div>
+        </div> */}
+        <div
+  className="absolute top-[82%] right-[15%] md:top-[80%] md:right-[24%] w-[88px] h-[120px] text-brand-yellow"
+  style={{ animation: "float-1 10s ease-in-out infinite" }}
+>
+  <svg
+    width="100%"
+    height="100%"
+    viewBox="0 0 88 120"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      fill="currentColor"
+      d="
+        M22 8
+        H66
+        C78 8 84 16 84 28
+        C84 36 80 42 73 46
+        C80 50 84 56 84 64
+        C84 72 80 78 73 82
+        C80 86 84 92 84 100
+        C84 112 78 120 66 120
+        H22
+        C10 120 4 112 4 100
+        C4 92 8 86 15 82
+        C8 78 4 72 4 64
+        C4 56 8 50 15 46
+        C8 42 4 36 4 28
+        C4 16 10 8 22 8
+        Z
+      "
+    />
+  </svg>
+</div>
+
+        {/* Bottom Far Right: Blue Circle */}
+        <div className="absolute top-[65%] -right-4 md:top-[68%] md:right-[6%] w-32 h-32 bg-brand-blue rounded-full" style={{ animation: 'float-2 7.5s ease-in-out infinite 2s' }}></div>
+
+      </div>
+
+      {/* Main Content */}
+      <div className="relative z-10 flex flex-col items-center text-center max-w-4xl mx-auto px-6 mb-24">
+        
+        {/* Active Pill Segment */}
+        <div className="bg-brand-yellow px-5 py-2.5 rounded-lg text-brand-dark mb-10 shadow-sm inline-block">
+          <span className="font-bold">30K€</span>/moyenne exonérés par client
+        </div>
+        
+        {/* Headlines */}
+        <h1 className="text-5xl md:text-6xl font-serif text-brand-dark tracking-tight leading-[1.1] mb-6 font-bold">
+          Réduisons ensemble votre<br className="hidden md:block"/> charge fiscale
+        </h1>
+        
+        <p className="text-lg md:text-[17px] text-gray-500 max-w-2xl mb-10 font-sans font-medium leading-relaxed px-4">
+          Nos avocats fiscalistes accompagnent les professions libérales, freelances et TPE/PME dans la gestion de l'ensemble de leurs problématiques fiscales.
+        </p>
+
+        <Button className="bg-brand-blue hover:bg-blue-700 text-white font-semibold text-base rounded-[6px] px-8 py-6 shadow-sm">
+          Réserver un appel gratuit
+        </Button>
+      </div>
+
     </section>
   );
 }

@@ -1,52 +1,62 @@
 import Image from "next/image";
+import { Copyright, Settings } from "lucide-react";
 
 export default function Profile() {
   return (
-    <section className="bg-[#fbfcff] w-full py-32 overflow-hidden relative">
-      <div className="max-w-7xl mx-auto px-6 md:px-12">
-        <h2 className="text-3xl md:text-5xl font-serif font-medium text-brand-dark mb-24 text-center tracking-tight">
-          Une expertise qui donne le la
+    <section className="bg-white w-full py-24 px-6 md:px-12 overflow-hidden">
+      <div className="max-w-6xl mx-auto">
+
+        {/* Heading */}
+        <h2 className="text-4xl md:text-[42px] font-serif font-bold text-[#030423] mb-16 text-center tracking-tight leading-tight">
+          Une expertise qui change la donne
         </h2>
 
-        <div className="flex flex-col lg:flex-row items-center justify-between gap-16">
-          
-          {/* Left Side: Stats / Cards */}
-          <div className="flex flex-col sm:flex-row gap-8 lg:w-[55%] w-full">
-            {/* Box 1 */}
-            <div className="bg-white p-10 rounded-[2rem] flex flex-col items-center text-center shadow-[0_15px_50px_rgba(0,0,0,0.04)] h-full w-full group hover:-translate-y-2 transition-transform duration-500">
-              <div className="w-16 h-16 bg-brand-green/10 text-brand-green font-bold text-2xl rounded-2xl flex items-center justify-center mb-8 shrink-0 group-hover:scale-110 group-hover:bg-brand-green group-hover:text-white shadow-inner transition-all duration-300">
-                10
+        {/* Main Row */}
+        <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-12">
+
+          {/* Left: Two transparent columns side by side */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 flex-1">
+
+            {/* Column 1: Honoraires */}
+            <div className="flex flex-col items-center text-center px-4">
+              {/* Green icon with black icon inside */}
+              <div className="w-12 h-12 bg-brand-green rounded-xl flex items-center justify-center mb-6 shrink-0">
+                <Copyright className="text-black w-5 h-5" strokeWidth={2.5} />
               </div>
-              <h3 className="font-bold text-xl text-brand-dark mb-4">10 années</h3>
-              <p className="text-gray-500 text-[15px] font-light leading-relaxed">
-                D'expertise de comptabilité d'entreprise, de fiscalité et de conseils de premier plan pour des indépendants en Fribourg.
+              <h3 className="text-[17px] font-bold text-[#030423] mb-4">
+                Honoraires
+              </h3>
+              <p className="text-[14px] text-gray-400 leading-relaxed font-normal">
+                Honoraires forfaitaires, clairs et définis dès le départ. Une tarification pensée pour rester proportionnée aux économies fiscales et sociales obtenues, avec un engagement simple : nos honoraires n&apos;excèdent jamais les économies réalisées.
               </p>
             </div>
 
-            {/* Box 2 */}
-            <div className="bg-white p-10 rounded-[2rem] flex flex-col items-center text-center shadow-[0_15px_50px_rgba(0,0,0,0.04)] h-full w-full group hover:-translate-y-2 transition-transform duration-500">
-              <div className="w-16 h-16 bg-brand-pink/10 text-brand-pink font-bold text-2xl rounded-2xl flex items-center justify-center mb-8 shrink-0 group-hover:scale-110 group-hover:bg-brand-pink group-hover:text-white shadow-inner transition-all duration-300">
-                <svg className="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5V4H2v16h5m10 0v-5H7v5m10 0a2 2 0 002-2v-3H5v3a2 2 0 002 2" />
-                </svg>
+            {/* Column 2: Stratégie sur mesure */}
+            <div className="flex flex-col items-center text-center px-4">
+              {/* Pink icon with black icon inside */}
+              <div className="w-12 h-12 bg-brand-pink rounded-xl flex items-center justify-center mb-6 shrink-0">
+                <Settings className="text-black w-5 h-5" strokeWidth={2.5} />
               </div>
-              <h3 className="font-bold text-xl text-brand-dark mb-4">Réseau de partenaires</h3>
-              <p className="text-gray-500 text-[15px] font-light leading-relaxed">
-                Des milliers d'heures à conseiller mes clients à tous les niveaux de leur vie.
+              <h3 className="text-[17px] font-bold text-[#030423] mb-4">
+                Stratégie sur mesure
+              </h3>
+              <p className="text-[14px] text-gray-400 leading-relaxed font-normal">
+                Chaque client bénéficie d&apos;une analyse personnalisée de son potentiel fiscal.
               </p>
             </div>
+
           </div>
 
-          {/* Right Side: Image Placeholder */}
-          <div className="lg:w-[45%] w-full max-w-md relative flex justify-center lg:justify-end mt-12 lg:mt-0">
-            <div className="absolute inset-0 bg-brand-cyan/20 rounded-[4rem] transform scale-110 -rotate-6 transition-transform duration-700 hover:rotate-[-2deg]" style={{ borderRadius: '40% 60% 70% 30% / 40% 50% 60% 50%' }} />
-            <div className="relative z-10 w-full aspect-[4/5] rounded-[3rem] overflow-hidden shadow-2xl bg-white border-4 border-white">
-              <img 
-                src="https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=800&auto=format&fit=crop" 
-                alt="Expertise Profile" 
-                className="w-full h-full object-cover"
-              />
-            </div>
+          {/* Right: Profil.png with baked-in wavy blob */}
+          <div className="relative shrink-0 w-full lg:w-[360px] flex justify-center lg:justify-end">
+            <Image
+              src="/Profil.png"
+              alt="Expert fiscal"
+              width={360}
+              height={440}
+              className="object-contain w-full max-w-[360px]"
+              priority
+            />
           </div>
 
         </div>

@@ -1,16 +1,21 @@
-import React from "react";
-
 export default function Callout() {
   return (
-    <section className="relative w-full bg-brand-blue py-20 overflow-hidden">
-      {/* Abstract animated gradient light */ }
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-4xl h-full bg-gradient-to-r from-transparent via-white/10 to-transparent blur-3xl opacity-50 pointer-events-none animate-[pulse_6s_infinite]" />
-      
-      <div className="relative max-w-5xl mx-auto px-6 md:px-12 flex flex-col items-center text-center z-10">
-        <p className="text-xl md:text-3xl text-white font-serif leading-relaxed tracking-wide font-medium">
-          En tant que fiduciaire à Fribourg, je participe au quotidien à la réussite d'entrepreneurs, et à la réalisation de projets pour les particuliers, je connais leurs aventures, leurs doutes et le chemin à parcourir pour avancer.
-        </p>
-        <div className="mt-8 w-12 h-1 bg-brand-pink rounded-full shadow-[0_0_10px_rgba(255,133,213,0.5)]" />
+    <section className="w-full bg-[#4040F0] py-16 px-6">
+      <div className="max-w-5xl mx-auto flex items-center gap-10 md:gap-16">
+
+        {/* Left horizontal rule */}
+        <div className="hidden md:block h-px bg-white/30 flex-1" />
+
+        {/* Center Text */}
+        <div className="flex-shrink-0 max-w-md text-center">
+          <p className="text-white text-[17px] font-sans font-medium leading-[1.75] tracking-wide">
+            En moyenne, nos clients découvrent qu'ils ont payé bien plus que nécessaire : mauvais choix de statut, exonérations ignorées, options fiscales oubliées... Combien d'années d'exonération laissez-vous passer ?
+          </p>
+        </div>
+
+        {/* Right horizontal rule */}
+        <div className="hidden md:block h-px bg-white/30 flex-1" />
+
       </div>
     </section>
   );
