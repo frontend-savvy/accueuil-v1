@@ -13,7 +13,7 @@ export default function Navbar() {
   ];
 
   return (
-    <header className="w-full bg-[#F4FAFF] border-b border-[#C0E0F0] z-50 relative">
+    <header className="w-full bg-[#F4FAFF]/90 backdrop-blur-md border-b border-[#C0E0F0] z-50 sticky top-0">
       <nav className="flex items-center justify-between px-6 md:px-12 py-5 max-w-7xl mx-auto w-full">
         <div className="font-extrabold italic text-3xl tracking-tight text-brand-blue flex items-center gap-1 w-[200px]">
           єxonéo
